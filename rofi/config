@@ -1,0 +1,8 @@
+# end color-normal[3] for current selection and color-window[1,2] for lines
+rofi.color-enabled:                  true
+rofi.color-normal:                   argb:00000000,  #D8DEE9 , argb:00000000,  #a4f4f0 ,  #000000
+rofi.color-urgent:                   argb:00000000,  #000000 , argb:00000000,  #000000 ,  #000000
+rofi.color-active:                   argb:00000000,  #000000 , argb:00000000,  #000000 ,  #000000
+rofi.color-window:                   argb:ee404040,  #51fff6 , #51fff6
+rofi.separator-style:                solid
+

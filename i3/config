@@ -1,0 +1,131 @@
+# Mod-keys ##
+set $alt Mod1
+
+# font
+font pango:Product Sans Regular 8
+
+# On start
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id compton --config /home/user/.config/compton/config -b
+exec --no-startup-id nm-applet
+exec --no-startup-id xfce4-panel
+exec conky -c /home/user/.config/conky/config -d
+
+#Looks
+
+# gaps
+gaps inner 8
+gaps outer 0
+
+# border
+new_window pixel 3
+
+# class                   border  backgr. text    indicator
+
+# current active window
+client.focused            #51fff6 #51fff6 #111111 #51fff6
+# inactive window
+client.focused_inactive   #12bab1 #12bab1 #5f676a
+# also inactive window
+client.unfocused          #12bab1 #12bab1 #888888 #12bab1 
+client.urgent             #ff0000 #ff0000 #ffffff #ff0000
+
+# Navigation
+
+# change focus
+bindsym $alt+h focus left
+bindsym $alt+j focus down
+bindsym $alt+k focus up
+bindsym $alt+l focus right
+
+# move focused window
+bindsym $alt+Shift+h move left
+bindsym $alt+Shift+j move down
+bindsym $alt+Shift+k move up
+bindsym $alt+Shift+l move right
+
+#split window
+bindsym $alt+u split v
+bindsym $alt+i split h
+bindsym $alt+o fullscreen toggle global
+
+#Use Mouse+$alt to drag floating windows to their wanted position
+floating_modifier $alt
+
+# toggle tiling / floating
+bindsym $alt+Shift+Return floating toggle
+
+# change focus between tiling / floating windows
+bindsym $alt+Return focus mode_toggle
+
+bindsym $alt+BackSpace reload
+bindsym $alt+Shift+BackSpace exec "i3-nagbar -t warning -m 'Logout?' -b 'Yes' 'i3-msg No'"
+
+# resize window (you can also use the mouse for that)
+bindsym $alt+r mode "resize"
+mode "resize" {
+        bindsym l resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym h resize grow width 10 px or 10 ppt
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# Programs
+
+#used keys: hjkl`~wrfsuio<backspace>
+
+bindsym $alt+q exec --no-startup-id termite
+#bindsym $alt+q exec --no-startup-id gnome-terminal
+bindsym $alt+f exec --no-startup-id firefox
+bindsym $alt+c exec --no-startup-id chromium-browser
+bindsym $alt+s exec --no-startup-id spotify
+#bindsym $alt+g exec --no-startup-id gimp
+#bindsym $alt+t exec --no-startup-id xfce4-taskmanager
+#bindsym $alt+3 exec --no-startup-id subl
+#bindsym $alt+v exec --no-startup-id vlc
+#bindsym $alt+a exec --no-startup-id lxappearance
+#bindsym $alt+4 exec --no-startup-id nitrogen
+#bindsym $alt+n exec --no-startup-id nautilus
+#bindsym $alt+2 exec --no-startup-id pavucontrol
+bindsym $alt+space exec --no-startup-id rofi -show run -config /home/user/.config/rofi/config
+bindsym $alt+semicolon exec --no-startup-id rofi -show run -config /home/user/.config/rofi/config
+bindsym $alt+w kill
+#bindsym F1 exec pulseaudio-ctl mute
+#bindsym F2 exec amixer -c 1 sset PCM 5%-
+#bindsym F3 exec amixer -c 1 sset PCM 5%+
+#bindsym F5 exec pulseaudio-ctl previous
+#bindsym F6 exec playerctl play-pause
+#bindsym F7 exec pulseaudio-ctl next
+#bindsym F8 exec pulseaudio-ctl mute
+#bindsym F9 exec pulseaudio-ctl mute
+#bindsym F10 exec pulseaudio-ctl mute
+#bindsym F11 exec pulseaudio-ctl mute
+#bindsym F12 exec pulseaudio-ctl mute
+
+##
+##Unused
+##
+
+# switch to workspace
+#bindsym $alt+1 workspace 1
+# move focused container to workspace
+#bindsym $alt+Shift+1 move container to workspace 1
+
+#bar {
+#        status_command i3status
+#}
+
+# focus the parent container
+#bindsym $alt+a focus parent
+
+# focus the child container
+#bindsym $alt+d focus child
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $alt+s layout stacking
+#bindsym $alt+a layout tabbed
+#bindsym $alt+z layout toggle split
+
+
